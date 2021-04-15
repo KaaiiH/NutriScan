@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Name of your awesome camera app -->
+    <title>Nutriscan</title>
+    <!-- Link to your main style sheet-->
+    <link rel="stylesheet" href="cstyle.css">
+</head>
+<body>
+    <!-- Camera -->
+    <main id="camera">
+        <!-- Camera sensor -->
+        <canvas id="camera--sensor"></canvas>
+        <!-- Camera view -->
+        <video id="camera--view" autoplay playsinline></video>
+        <!-- Camera output -->
+        <img src="//:0" alt="" id="camera--output">
+        <!-- Camera trigger -->
+        <button type = "submit" id="camera--trigger" >
+            <img src = icon.png width="75" height = "75" alt="submit" />
+        </button>
+        <a href = "index.html" target = "_self" id = "transfer">Go Back</a>
+        <div id="rightfood"></div>
+        <button type = "submit" id="Yes">Yes</button>
+        <button type = "submit" id="No">No</button>
+        <button type = "submit" id="Done">Done</button>
+        <button type = "submit" id="Manual">Type in Food Manually</button>
+        <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+        <ul id ="what">
+            <li id="LF">You're lacking Fruit</li>
+            <li id="LV">You're lacking Vegetables</li>
+            <li id="LG">You're lacking Grains</li>
+            <li id="LD">You're lacking Dairy</li>
+            <li id="LPM">You're lacking Protein / Meat</li>
+            <li id="LJ">You're eating too much Junk Food!</li>
+            <li id="WN">You're plate is Nutritious!</li>
+        </ul>
+
+        <button type = "submit" id="spawnmap">Directions to Nearest Store?</button>
+        <p id="status"></p>
+        <a id="map-link" target="_blank"></a>
+        <div id="map"></div>
+        <div id="info_div"></div>
+
+
+    </main>
+    <!-- Reference to your JavaScript file -->    
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCgTkQd8dCZxmJv9kMHqlp2MYsrGX5A7Sw&callback=initMap" async defer></script>
+    <script src="app.js"></script>
+</body>
+</html>
